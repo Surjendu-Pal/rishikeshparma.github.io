@@ -325,44 +325,137 @@
 </html>
 
 <section id="research" class="animated-section research-section">
+  <style>
+    /* Section Layout */
+    .research-section {
+      background: #f9f9f9;
+      padding: 60px 20px;
+      border-top: 2px solid #ddd;
+      border-bottom: 2px solid #ddd;
+      font-family: Arial, sans-serif;
+    }
+
+    .research-container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Section Title */
+    .section-heading {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 30px;
+      color: #222;
+      text-align: center;
+    }
+
+    /* Content Area */
+    .section-content {
+      animation: fadeInUp 0.8s ease-in-out;
+    }
+
+    .desc h3 {
+      font-size: 1.5rem;
+      margin-top: 32px;
+      margin-bottom: 16px;
+      color: #333;
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 6px;
+    }
+
+    .desc ul {
+      list-style: disc;
+      padding-left: 20px;
+      margin-bottom: 30px;
+    }
+
+    .desc li {
+      margin-bottom: 20px;
+    }
+
+    .desc p {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    /* Animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .section-heading {
+        font-size: 1.6rem;
+      }
+
+      .desc h3 {
+        font-size: 1.25rem;
+      }
+
+      .desc p {
+        font-size: 0.95rem;
+      }
+
+      .desc ul {
+        padding-left: 16px;
+      }
+    }
+  </style>
+
   <div class="container research-container">
     <h2 class="section-heading">Research & Publications</h2>
 
     <div class="section-content fade-in-up">
-     <div class="desc">
-  <h3>Working Papers and Under Revision</h3>
-  <ul>
-    <li>
-      Parma, R., Koçyiğit, Ç., and Mantin, B. (2025).<br>
-      <em>Capacity Allocation: Balancing Contract Commitments and Spot Market Opportunities</em>.<br>
-      Working paper, targeted for submission to <em>Production and Operations Management</em>.
-    </li>
-    <li>
-      Parma, R., Koçyiğit, Ç., and Mantin, B. (2024).<br>
-      <em>Simple and Effective: A Deterministic Auction with Support Information</em>.<br>
-      Major revision, <em>Mathematics of Operations Research</em>.
-    </li>
-  </ul>
+      <div class="desc">
+        <h3>Working Papers and Under Revision</h3>
+        <ul>
+          <li>
+            <p>
+              Parma, R., Koçyiğit, Ç., and Mantin, B. (2025).<br>
+              <em>Capacity Allocation: Balancing Contract Commitments and Spot Market Opportunities</em>.<br>
+              Working paper, targeted for submission to <em>Production and Operations Management</em>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Parma, R., Koçyiğit, Ç., and Mantin, B. (2024).<br>
+              <em>Simple and Effective: A Deterministic Auction with Support Information</em>.<br>
+              Major revision, <em>Mathematics of Operations Research</em>.
+            </p>
+          </li>
+        </ul>
 
-  <h3>Journal Publications</h3>
-  <ul>
-    <li>
-      Baker, R., Chadwick, S., Parma, R., and Scarf, P. (2022).<br>
-      <em>The binomial-match, outcome uncertainty, and the case of netball</em>.<br>
-      <em>Journal of the Operational Research Society</em>, 73(8), pp. 1856–1872.
-    </li>
-    <li>
-      Scarf, P., Parma, R., and McHale, I. (2019).<br>
-      <em>On outcome uncertainty and scoring rates in sport: The case of international rugby union</em>.<br>
-      <em>European Journal of Operational Research</em>, 273(2), pp. 721–730.
-    </li>
-  </ul>
-</div>
-
+        <h3>Journal Publications</h3>
+        <ul>
+          <li>
+            <p>
+              Baker, R., Chadwick, S., Parma, R., and Scarf, P. (2022).<br>
+              <em>The binomial-match, outcome uncertainty, and the case of netball</em>.<br>
+              <em>Journal of the Operational Research Society</em>, 73(8), pp. 1856–1872.
+            </p>
+          </li>
+          <li>
+            <p>
+              Scarf, P., Parma, R., and McHale, I. (2019).<br>
+              <em>On outcome uncertainty and scoring rates in sport: The case of international rugby union</em>.<br>
+              <em>European Journal of Operational Research</em>, 273(2), pp. 721–730.
+            </p>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
-
 
 
 <section id="gallery" class="animated-section">
@@ -601,35 +694,26 @@
     <div class="section-content fade-in-up">
       <div class="desc">
 <div class="desc">
+ <div class="desc">
   <p>
     I’ve contributed to academia as a co-lecturer and teaching assistant in several university-level courses:
   </p>
 
   <h3>Co-Lecturer</h3>
   <ul>
-    <li>
-      Linear Algebra (2nd Year, Bachelor in Economics, 2025) — 60 students
-    </li>
-    <li>
-      Supply Chain Management (3rd Year, Bachelor in Economics, 2025) — 20 students
-    </li>
+    <li><strong>Linear Algebra</strong> (2nd Year, Bachelor in Economics, 2025) — 60 students</li>
+    <li><strong>Supply Chain Management</strong> (3rd Year, Bachelor in Economics, 2025) — 20 students</li>
   </ul>
 
   <h3>Teaching Assistant</h3>
   <ul>
-    <li>
-      Linear Algebra (2nd Year, Bachelor in Economics, 2022–2023) — 60 students per year
-    </li>
-    <li>
-      Inventory Management (Master’s in Logistics and Supply Chain Management, 2024) — 20 students
-    </li>
+    <li><strong>Linear Algebra</strong> (2nd Year, Bachelor in Economics, 2022–2023) — 60 students per year</li>
+    <li><strong>Inventory Management</strong> (Master’s in Logistics and Supply Chain Management, 2024) — 20 students</li>
   </ul>
 
   <h3>Master’s Thesis Co-Supervisor</h3>
   <ul>
-    <li>
-      Freight Demand Forecasting for Short Sea Liners — 3 students
-    </li>
+    <li><strong>Freight Demand Forecasting for Short Sea Liners</strong> — 3 students</li>
   </ul>
 </div>
 
@@ -637,6 +721,54 @@
   </div>
 </section>
 <style>
+  .desc {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  padding: 16px;
+  max-width: 100%;
+  box-sizing: border-box;
+  color: #333;
+}
+
+.desc p {
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.desc h3 {
+  margin-top: 24px;
+  margin-bottom: 12px;
+  font-size: 1.25rem;
+  color: #222;
+}
+
+.desc ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.desc li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+@media (max-width: 600px) {
+  .desc {
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+
+  .desc h3 {
+    font-size: 1.1rem;
+  }
+
+  .desc li {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+  }
+}
+
   .teaching-container {
     max-width: 900px;
     margin: 0 auto;
@@ -749,28 +881,72 @@
 
     <div class="fade-in-up">
   <div class="desc">
-    <h3>Conference Presentations</h3>
-    <ul>
-      <li>INFORMS Annual Meeting – Indianapolis, USA (2022)</li>
-      <li>INFORMS Revenue Management and Pricing Conference – London, UK (2023)</li>
-      <li>TA Pai Management Institute – Manipal, India (2024)</li>
-      <li>OR Conference – TU Munich, Germany (2024)</li>
-      <li>Indian Institute of Management – Lucknow, India (2025)</li>
-      <li>Indian Institute of Management – Udaipur, India (2025)</li>
-    </ul>
+  <h3>Conference Presentations</h3>
+  <ul>
+    <li><strong>INFORMS Annual Meeting</strong> – Indianapolis, USA (2022)</li>
+    <li><strong>INFORMS Revenue Management and Pricing Conference</strong> – London, UK (2023)</li>
+    <li><strong>TA Pai Management Institute</strong> – Manipal, India (2024)</li>
+    <li><strong>OR Conference</strong> – TU Munich, Germany (2024)</li>
+    <li><strong>Indian Institute of Management</strong> – Lucknow, India (2025)</li>
+    <li><strong>Indian Institute of Management</strong> – Udaipur, India (2025)</li>
+  </ul>
 
-    <h3>Poster Presentations</h3>
-    <ul>
-      <li>Workshop on Algorithms, Approximation, and Learning in Market and Mechanism Design – UC Berkeley, USA (2023)</li>
-      <li>INFORMS MSOM Conference – London Business School, UK (2025)</li>
-    </ul>
-  </div>
+  <h3>Poster Presentations</h3>
+  <ul>
+    <li><strong>Workshop on Algorithms, Approximation, and Learning in Market and Mechanism Design</strong> – UC Berkeley, USA (2023)</li>
+    <li><strong>INFORMS MSOM Conference</strong> – London Business School, UK (2025)</li>
+  </ul>
+</div>
+
 </div>
 
   </div>
 </section>
 
 <style>
+  .desc {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  padding: 16px;
+  max-width: 100%;
+  box-sizing: border-box;
+  color: #333;
+}
+
+.desc h3 {
+  margin-top: 24px;
+  margin-bottom: 12px;
+  font-size: 1.25rem;
+  color: #222;
+}
+
+.desc ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 24px;
+}
+
+.desc li {
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+@media (max-width: 600px) {
+  .desc {
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+
+  .desc h3 {
+    font-size: 1.1rem;
+  }
+
+  .desc li {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+  }
+}
+
   .animated-section {
     background: linear-gradient(to right, #f0fafa, #ffffff);
     padding: 100px 5vw 60px;
