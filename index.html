@@ -1012,90 +1012,125 @@
 </style>
 
 
-<section id="interests" class="animated-section interests-section">
-  <style>
-    /* Interests Section Layout */
-    .interests-section {
-      background: #fff;
-      padding: 60px 20px;
-      font-family: Arial, sans-serif;
-      border-top: 2px solid #ddd;
-      border-bottom: 2px solid #ddd;
-    }
-
-    .interests-section .container {
-      max-width: 960px;
-      margin: 0 auto;
-    }
-
-    .interests-section .section-heading {
-      font-size: 2rem;
-      font-weight: 600;
-      margin-bottom: 30px;
-      color: #222;
-      text-align: center;
-    }
-
-    .interests-section .desc {
-      font-size: 1rem;
-      line-height: 1.7;
-      color: #444;
-      margin-bottom: 25px;
-      text-align: justify;
-    }
-
-    .research-list {
-      list-style: disc;
-      padding-left: 20px;
-    }
-
-    .research-list li {
-      margin-bottom: 18px;
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #333;
-    }
-
-    .research-list strong {
-      color: #000;
-    }
-
-    @media (max-width: 768px) {
-      .interests-section .section-heading {
-        font-size: 1.6rem;
-      }
-
-      .interests-section .desc,
-      .research-list li {
-        font-size: 0.95rem;
-      }
-
-      .research-list {
-        padding-left: 16px;
-      }
-    }
-  </style>
-
+<section id="interests" class="animated-section">
   <div class="container">
     <h2 class="section-heading">Interests & Hobbies</h2>
 
     <div class="fade-in-up">
-      <p class="desc">
-        Beyond research and academic commitments, I actively engage in a wide range of personal pursuits that reflect my
-        passion for discipline, leadership, and well-being. These interests not only recharge my mind but also enrich my
-        perspective on teamwork, perseverance, and mental clarity.
-      </p>
-      <ul class="research-list">
-        <li><strong>Yoga & Fitness:</strong> Recognized as Best Performer in zonal yoga tournaments (2010); I continue
-          to practice yoga and meditation regularly to cultivate mindfulness and physical endurance.</li>
-        <li><strong>Cricket Leadership:</strong> Former Captain of the University of Luxembourg’s Cricket Club
-          (2022–2023); awarded the Best Bowler Medal (2023–2024) for consistent all-round performance and mentorship on
-          the field.</li>
-        <li><strong>Running Enthusiast:</strong> Participated in half-marathons and team relay races across Luxembourg;
-          I enjoy the meditative rhythm of long-distance running and the spirit of community in competitive events.</li>
-        <li><strong>Music & Travel:</strong> Avid lover of instrumental music and global travel—exploring new cultures,
-          cuisines, and historical landmarks fuels my creativity and curiosity.</li>
-      </ul>
+      <div class="desc">
+        <p>
+          Beyond research and academic commitments, I actively engage in a wide range of personal pursuits that reflect my
+          passion for discipline, leadership, and well-being. These interests not only recharge my mind but also enrich my
+          perspective on teamwork, perseverance, and mental clarity.
+        </p>
+        <ul>
+          <li><strong>Yoga & Fitness:</strong> Recognized as Best Performer in zonal yoga tournaments (2010); I continue
+            to practice yoga and meditation regularly to cultivate mindfulness and physical endurance.</li>
+          <li><strong>Cricket Leadership:</strong> Former Captain of the University of Luxembourg’s Cricket Club
+            (2022–2023); awarded the Best Bowler Medal (2023–2024) for consistent all-round performance and mentorship on
+            the field.</li>
+          <li><strong>Running Enthusiast:</strong> Participated in half-marathons and team relay races across Luxembourg;
+            I enjoy the meditative rhythm of long-distance running and the spirit of community in competitive events.</li>
+          <li><strong>Music & Travel:</strong> Avid lover of instrumental music and global travel—exploring new cultures,
+            cuisines, and historical landmarks fuels my creativity and curiosity.</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
+<style>
+  /* Shared Section Animation and Layout */
+  .animated-section {
+    background: linear-gradient(to right, #f0fafa, #ffffff);
+    padding: 100px 5vw 60px;
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .section-heading {
+    font-size: 2.5rem;
+    color: #004d40;
+    text-align: center;
+    margin-bottom: 2rem;
+    animation: slideInDown 1s ease forwards;
+  }
+
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s ease forwards;
+    animation-delay: 0.4s;
+  }
+
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInDown {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  /* Interests Section Specific */
+  #interests .desc {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.05rem;
+    color: #333;
+    line-height: 1.7;
+    text-align: justify;
+    padding: 16px;
+    box-sizing: border-box;
+    max-width: 800px;
+    margin-bottom: 1.5rem;
+  }
+
+  #interests .desc p {
+    margin-bottom: 1.2rem;
+  }
+
+  #interests .desc ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 24px;
+  }
+
+  #interests .desc li {
+    margin-bottom: 12px;
+    font-size: 1rem;
+  }
+
+  #interests .desc strong {
+    color: #000;
+  }
+
+  /* Responsive Tweaks */
+  @media (max-width: 600px) {
+    #interests .desc {
+      padding: 12px;
+      font-size: 0.95rem;
+    }
+
+    #interests .desc li {
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+
+    .section-heading {
+      font-size: 2rem;
+    }
+  }
+</style>
+
