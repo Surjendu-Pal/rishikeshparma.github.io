@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,7 +8,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
       font-family: 'Poppins', sans-serif;
@@ -28,7 +33,7 @@
       justify-content: space-between;
       padding: 0 5vw;
       z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     }
 
     .logo {
@@ -42,12 +47,19 @@
     }
 
     @keyframes typing {
-      from { width: 0; }
-      to { width: 14ch; }
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 14ch;
+      }
     }
 
     @keyframes blink {
-      50% { border-color: transparent; }
+      50% {
+        border-color: transparent;
+      }
     }
 
     .nav-links {
@@ -249,6 +261,7 @@
     }
   </style>
 </head>
+
 <body>
   <nav>
     <div class="logo">Rishikesh Parma</div>
@@ -271,14 +284,29 @@
       </div>
       <div class="about-content">
         <h2>About Me</h2>
-        <p>
-          I’m Rishikesh Parma, a PhD researcher at the University of Luxembourg, working at the crossroads of optimization, uncertainty, and machine learning. I design smart, simple algorithms that help real-world supply chains make better decisions — not just in theory, but in practice. My work lives where math meets impact. I’ve presented at global conferences, built tools used by industry, and collaborated with brilliant minds across borders.
-          Off the whiteboard, I’m into cricket, yoga, and long runs — because solving tough problems needs a clear head and a steady rhythm.
-        </p>
+       <p>
+  I am a PhD candidate in <strong>Operations Management</strong> at the <strong>University of Luxembourg</strong>,
+  expecting to defend my dissertation in <strong>September 2025</strong>. My doctoral research, supervised by
+  <strong>Prof. Çağıl Koçyiğit</strong> and <strong>Prof. Benny Mantin</strong>, focuses on
+  <strong>optimization under uncertainty</strong>. Specifically, I address <strong>resource allocation challenges
+  in supply chain problems</strong> by designing simple and practical algorithms. My work integrates
+  <strong>optimization techniques</strong> with <strong>machine learning methods</strong> to develop solutions
+  that are not only efficient but also suitable for real-world implementation.
+</p>
+
+<p>
+  I hold an <strong>Integrated Master’s degree in Mathematics and Computing</strong> from the
+  <strong>Indian Institute of Technology (IIT) Dhanbad</strong>, awarded in <strong>2019</strong>. During my studies,
+  I was a <strong>visiting research intern</strong> at the <strong>University of Salford</strong>, where I worked under
+  the mentorship of <strong>Prof. Phil Scarf</strong>.
+</p>
+
         <div class="social-icons">
-          <a href="https://www.linkedin.com/in/rishikesh-parma-38188b102" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.linkedin.com/in/rishikesh-parma-38188b102" target="_blank"><i
+              class="fab fa-linkedin"></i></a>
         </div>
-        <a class="cv-btn" href="https://drive.google.com/file/d/1Ka36m7-LEq67_4V53WsMG4CNITNoaoF2/view?usp=sharing" target="_blank">Download CV</a>
+        <a class="cv-btn" href="https://drive.google.com/file/d/1Ka36m7-LEq67_4V53WsMG4CNITNoaoF2/view?usp=sharing"
+          target="_blank">Download CV</a>
       </div>
     </div>
   </section>
@@ -293,6 +321,7 @@
   </script>
 
 </body>
+
 </html>
 
 <section id="research" class="animated-section research-section">
@@ -300,32 +329,36 @@
     <h2 class="section-heading">Research & Publications</h2>
 
     <div class="section-content fade-in-up">
-      <p class="desc">
-        My research focuses on capacity allocation in uncertain environments, combining optimization techniques with machine learning to tackle real-world supply chain challenges. I have developed deterministic auction models and contributed to several high-impact publications.
-      </p>
+      <div class="desc">
+  <h3>Working Papers and Under Revision</h3>
+  <ul>
+    <li>
+      Parma, R., Koçyiğit, Ç., and Mantin, B. (2025). 
+      <em>Capacity Allocation: Balancing Contract Commitments and Spot Market Opportunities</em>. 
+      Working paper, targeted for submission to <em>Production and Operations Management</em>.
+    </li>
+    <li>
+      Parma, R., Koçyiğit, Ç., and Mantin, B. (2024). 
+      <em>Simple and Effective: A Deterministic Auction with Support Information</em>. 
+      Major revision, <em>Mathematics of Operations Research</em>.
+    </li>
+  </ul>
 
-      <ul class="research-list">
-        <li>
-          <strong>Mathematics of Operations Research</strong> <em>(Under revision)</em><br>
-          <span>“Simple and Effective Auctions” — explores enhanced allocation using support information.</span>
-        </li>
-        <li>
-          <strong>Production and Operations Management</strong> <em>(Working paper)</em><br>
-          <span>“Balancing Contracts vs Spot Opportunities” — analyzes trade-offs in freight logistics.</span>
-        </li>
-        <li>
-          <strong>Journal of the Operational Research Society</strong> <em>(2022)</em><br>
-          <span>Investigates outcome uncertainty in netball sports analytics.</span>
-        </li>
-        <li>
-          <strong>European Journal of Operational Research</strong> <em>(2019)</em><br>
-          <span>Predicts scoring and outcomes in international rugby.</span>
-        </li>
-      </ul>
+  <h3>Journal Publications</h3>
+  <ul>
+    <li>
+      Baker, R., Chadwick, S., Parma, R., and Scarf, P. (2022). 
+      <em>The binomial-match, outcome uncertainty, and the case of netball</em>. 
+      <em>Journal of the Operational Research Society</em>, 73(8), pp. 1856–1872.
+    </li>
+    <li>
+      Scarf, P., Parma, R., and McHale, I. (2019). 
+      <em>On outcome uncertainty and scoring rates in sport: The case of international rugby union</em>. 
+      <em>European Journal of Operational Research</em>, 273(2), pp. 721–730.
+    </li>
+  </ul>
+</div>
 
-      <p class="desc">
-        These contributions reflect a strong integration of academic rigor with industry relevance, consistently pushing the boundaries between theoretical research and practical application.
-      </p>
     </div>
   </div>
 </section>
@@ -398,8 +431,13 @@
     background: #00796b;
   }
 
-  .prev { left: 10px; }
-  .next { right: 10px; }
+  .prev {
+    left: 10px;
+  }
+
+  .next {
+    right: 10px;
+  }
 
   .carousel-dots {
     text-align: center;
@@ -493,139 +531,148 @@
       transform: translateY(-50px);
       opacity: 0;
     }
+
     to {
       transform: translateY(0);
       opacity: 1;
     }
   }
-.research-container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-}
 
-.section-heading {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  color: #222;
-}
-
-.desc {
-  text-align: left;
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: #444;
-  margin-bottom: 1.5rem;
-}
-
-.research-list {
-  padding-left: 1.5rem;
-  list-style-type: disc;
-  margin-bottom: 1.5rem;
-}
-
-.research-list li {
-  margin-bottom: 1.2rem;
-  font-size: 1rem;
-  color: #333;
-}
-
-.research-list span {
-  display: block;
-  margin-top: 0.2rem;
-  font-style: italic;
-  color: #555;
-}
-
-/* Responsive Tweaks */
-@media (max-width: 768px) {
   .research-container {
-    padding: 1rem 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
   }
 
   .section-heading {
-    font-size: 1.5rem;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #222;
   }
 
-  .desc,
+  .desc {
+    text-align: left;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 1.5rem;
+  }
+
+  .research-list {
+    padding-left: 1.5rem;
+    list-style-type: disc;
+    margin-bottom: 1.5rem;
+  }
+
   .research-list li {
-    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
+    color: #333;
   }
-}
 
+  .research-list span {
+    display: block;
+    margin-top: 0.2rem;
+    font-style: italic;
+    color: #555;
+  }
 
+  /* Responsive Tweaks */
+  @media (max-width: 768px) {
+    .research-container {
+      padding: 1rem 1rem;
+    }
+
+    .section-heading {
+      font-size: 1.5rem;
+    }
+
+    .desc,
+    .research-list li {
+      font-size: 0.95rem;
+    }
+  }
 </style>
 
 <section id="teaching" class="animated-section teaching-section">
   <div class="container teaching-container">
     <h2 class="section-heading">Teaching & Projects</h2>
     <div class="section-content fade-in-up">
-      <p class="desc">
-        I’ve contributed to academia as a co-lecturer and teaching assistant in several university-level courses:
-      </p>
-      <ul class="research-list">
-        <li><strong>Co-Lecturer:</strong> Linear Algebra (Bachelor’s, 2025), Supply Chain Management (Bachelor’s, 2025)</li>
-        <li><strong>Teaching Assistant:</strong> Linear Algebra (2022–2023), Inventory Management (Master’s, 2024)</li>
-        <li><strong>Supervisor:</strong> Master’s theses on freight demand forecasting (3 students)</li>
-      </ul>
-      <p class="desc">
-        In industry, I developed a decision-support tool for a maritime freight carrier that enables real-time contract allocation decisions by modeling demand across contract and spot markets. This tool improved revenue predictability and operational flexibility.
-      </p>
-      <p class="desc">
-        I also held roles as a Market Research Analyst in India and a Research Intern in the UK, gaining insights into data-driven market dynamics and academic research methods.
-      </p>
+      <div class="desc">
+  <p>
+    I’ve contributed to academia as a co-lecturer and teaching assistant in several university-level courses:
+  </p>
+
+  <h3>Co-Lecturer</h3>
+  <ul>
+    <li>Linear Algebra (2nd Year, Bachelor in Economics, 2025) — 60 students</li>
+    <li>Supply Chain Management (3rd Year, Bachelor in Economics, 2025) — 20 students</li>
+  </ul>
+
+  <h3>Teaching Assistant</h3>
+  <ul>
+    <li>Linear Algebra (2nd Year, Bachelor in Economics, 2022–2023) — 60 students per year</li>
+    <li>Inventory Management (Master’s in Logistics and Supply Chain Management, 2024) — 20 students</li>
+  </ul>
+
+  <h3>Master’s Thesis Co-Supervisor</h3>
+  <ul>
+    <li>Freight Demand Forecasting for Short Sea Liners — 3 students</li>
+  </ul>
+</div>
+
     </div>
   </div>
 </section>
 <style>
-.teaching-container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-}
-
-.section-heading {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  color: #222;
-}
-
-.desc {
-  text-align: left;
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: #444;
-  margin-bottom: 1.5rem;
-}
-
-.research-list {
-  padding-left: 1.5rem;
-  list-style-type: disc;
-  margin-bottom: 1.5rem;
-}
-
-.research-list li {
-  margin-bottom: 1rem;
-  font-size: 1rem;
-  color: #333;
-}
-
-@media (max-width: 768px) {
   .teaching-container {
-    padding: 1.2rem 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
   }
 
   .section-heading {
-    font-size: 1.6rem;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #222;
   }
 
-  .desc,
-  .research-list li {
-    font-size: 0.95rem;
+  .desc {
+    text-align: left;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 1.5rem;
   }
-}
+
+  .research-list {
+    padding-left: 1.5rem;
+    list-style-type: disc;
+    margin-bottom: 1.5rem;
+  }
+
+  .research-list li {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: #333;
+  }
+
+  @media (max-width: 768px) {
+    .teaching-container {
+      padding: 1.2rem 1rem;
+    }
+
+    .section-heading {
+      font-size: 1.6rem;
+    }
+
+    .desc,
+    .research-list li {
+      font-size: 0.95rem;
+    }
+  }
 </style>
 <style>
   .animated-section {
@@ -661,6 +708,7 @@
       transform: translateY(-50px);
       opacity: 0;
     }
+
     to {
       transform: translateY(0);
       opacity: 1;
@@ -690,10 +738,16 @@
 
     <div class="fade-in-up">
       <p class="desc">
-        I’ve had the privilege of sharing my research and insights at various international conferences and academic forums. These events offered invaluable opportunities to connect with global experts, exchange ideas, and contribute to cutting-edge discussions in operations research, revenue management, and algorithmic market design.
-      </p>
-      <p class="desc">
-        Through keynote sessions, technical talks, and poster presentations, I’ve engaged with diverse academic and industry audiences, sparking meaningful conversations and collaborations. My contributions have been recognized for their practical relevance, innovative approach, and data-driven impact.
+        INFORMS Annual Meeting — Indianapolis, USA 2022
+        INFORMS Revenue Management and Pricing Conference — London, UK 2023
+        TA Pai Management Institute, Manipal, India 2024
+        OR Conference — TU Munich, Germany 2024
+        Indian Institute of Management, Lucknow , India 2025
+        Indian Institute of Management, Udaipur, India 2025
+        Poster Presentations
+        ○ Workshop on Algorithms, Approximation, and Learning in Market and Mechanism Design
+        — UC Berkeley, USA 2023
+        ○ INFORMS MSOM Conference — London Business School, UK 2025
       </p>
 
       <ul class="research-list">
@@ -745,6 +799,7 @@
       transform: translateY(-50px);
       opacity: 0;
     }
+
     to {
       transform: translateY(0);
       opacity: 1;
@@ -777,13 +832,20 @@
 
     <div class="fade-in-up">
       <p class="desc">
-        Beyond research and academic commitments, I actively engage in a wide range of personal pursuits that reflect my passion for discipline, leadership, and well-being. These interests not only recharge my mind but also enrich my perspective on teamwork, perseverance, and mental clarity.
+        Beyond research and academic commitments, I actively engage in a wide range of personal pursuits that reflect my
+        passion for discipline, leadership, and well-being. These interests not only recharge my mind but also enrich my
+        perspective on teamwork, perseverance, and mental clarity.
       </p>
       <ul class="research-list">
-        <li><strong>Yoga & Fitness:</strong> Recognized as Best Performer in zonal yoga tournaments (2010); I continue to practice yoga and meditation regularly to cultivate mindfulness and physical endurance.</li>
-        <li><strong>Cricket Leadership:</strong> Former Captain of the University of Luxembourg’s Cricket Club (2022–2023); awarded the Best Bowler Medal (2023–2024) for consistent all-round performance and mentorship on the field.</li>
-        <li><strong>Running Enthusiast:</strong> Participated in half-marathons and team relay races across Luxembourg; I enjoy the meditative rhythm of long-distance running and the spirit of community in competitive events.</li>
-        <li><strong>Music & Travel:</strong> Avid lover of instrumental music and global travel—exploring new cultures, cuisines, and historical landmarks fuels my creativity and curiosity.</li>
+        <li><strong>Yoga & Fitness:</strong> Recognized as Best Performer in zonal yoga tournaments (2010); I continue
+          to practice yoga and meditation regularly to cultivate mindfulness and physical endurance.</li>
+        <li><strong>Cricket Leadership:</strong> Former Captain of the University of Luxembourg’s Cricket Club
+          (2022–2023); awarded the Best Bowler Medal (2023–2024) for consistent all-round performance and mentorship on
+          the field.</li>
+        <li><strong>Running Enthusiast:</strong> Participated in half-marathons and team relay races across Luxembourg;
+          I enjoy the meditative rhythm of long-distance running and the spirit of community in competitive events.</li>
+        <li><strong>Music & Travel:</strong> Avid lover of instrumental music and global travel—exploring new cultures,
+          cuisines, and historical landmarks fuels my creativity and curiosity.</li>
       </ul>
     </div>
   </div>
