@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,1124 +11,547 @@
       padding: 0;
       box-sizing: border-box;
     }
-
     body {
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(to right, #f8fbff, #eef6f9);
       scroll-behavior: smooth;
       overflow-x: hidden;
     }
-
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 70px;
-      background: #121212;
+    
+    /* Layout Structure */
+    .layout {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 5vw;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .logo {
-      font-size: 1.8rem;
-      color: #fff;
-      font-weight: 600;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 2px solid white;
-      animation: typing 3s steps(20) 1 forwards, blink 0.7s step-end 5;
-    }
-
-    @keyframes typing {
-      from {
-        width: 0;
-      }
-
-      to {
-        width: 14ch;
-      }
-    }
-
-    @keyframes blink {
-      50% {
-        border-color: transparent;
-      }
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-    }
-
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      position: relative;
-    }
-
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      left: 0;
-      bottom: -5px;
-      background: #4dd0e1;
-      transition: width 0.3s ease;
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    .hamburger {
-      display: none;
-      font-size: 2rem;
-      color: white;
-      cursor: pointer;
-    }
-
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 70px;
-        right: 0;
-        background: #121212;
-        flex-direction: column;
-        width: 200px;
-        padding: 1rem;
-        box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.4);
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .hamburger {
-        display: block;
-      }
-
-      .logo {
-        animation: none;
-        border: none;
-        font-size: 1.4rem;
-      }
-    }
-
-    .about-section {
       min-height: 100vh;
-      padding: 100px 5vw 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(to right, #e0f7fa, #ffffff);
     }
-
-    .about-container {
+    .sidebar {
+      width: 280px;
+      background: #121212;
+      color: white;
+      position: fixed;
+      height: 100vh;
+      padding: 2rem 1rem;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 3rem;
-      flex-wrap: wrap;
-      max-width: 1200px;
-      width: 100%;
+      flex-direction: column;
+      z-index: 100;
     }
-
-    .about-img {
-      flex: 1 1 300px;
-      display: flex;
-      justify-content: center;
+    .sidebar-header {
+      text-align: center;
+      margin-bottom: 2rem;
     }
-
-    .about-img img {
-      width: 300px;
-      height: 300px;
+    .profile-img {
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
       object-fit: cover;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      transition: transform 0.5s, box-shadow 0.5s;
+      margin: 0 auto 1rem;
+      border: 3px solid #4dd0e1;
+      display: block;
     }
-
-    .about-img img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    .name {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
     }
-
-    .about-content {
-      flex: 1 1 500px;
-      text-align: left;
+    .title {
+      font-size: 0.9rem;
+      color: #aaa;
+      margin-bottom: 1rem;
     }
-
-    .about-content h2 {
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: auto;
+    }
+    .nav-links a {
+      color: #aaa;
+      text-decoration: none;
+      padding: 0.8rem 1rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      background: rgba(77, 208, 225, 0.2);
+      color: #4dd0e1;
+    }
+    .nav-links a i {
+      width: 20px;
+      text-align: center;
+    }
+    .contact-info {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 0.8rem;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+    .contact-item i {
+      width: 20px;
+      text-align: center;
+    }
+    .main-content {
+      flex: 1;
+      margin-left: 280px;
+      padding: 1rem;
+    }
+    
+    /* Header */
+    header {
+      background: linear-gradient(to right, #e0f7fa, #ffffff);
+      padding: 1.5rem 2rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+    .header-content h1 {
       font-size: 2.5rem;
+      color: #004d40;
+      margin-bottom: 0.5rem;
+    }
+    .header-content p {
+      color: #555;
+      line-height: 1.6;
+    }
+    
+    /* Section Styles */
+    section {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      animation: fadeIn 1s ease-in-out;
+    }
+    .section-title {
+      font-size: 1.8rem;
+      color: #004d40;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #e0e0e0;
+    }
+    
+    /* About Section */
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+    }
+    .about-img {
+      flex: 1;
+      min-width: 300px;
+    }
+    .about-img img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    .about-text {
+      flex: 2;
+      min-width: 300px;
+    }
+    .about-text h2 {
+      font-size: 1.8rem;
       color: #004d40;
       margin-bottom: 1rem;
     }
-
-    .about-content p {
-      font-size: 1.1rem;
-      line-height: 1.8;
+    .about-text p {
       color: #333;
+      line-height: 1.8;
       margin-bottom: 1.5rem;
     }
-
-    .cv-btn {
+    .btn {
+      display: inline-block;
       padding: 0.8rem 1.6rem;
       background: #004d40;
       color: white;
-      border: none;
-      border-radius: 30px;
-      font-size: 1rem;
-      cursor: pointer;
       text-decoration: none;
-      transition: background 0.3s ease, transform 0.3s ease;
-      display: inline-block;
+      border-radius: 30px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
     }
-
-    .cv-btn:hover {
+    .btn:hover {
       background: #00796b;
-      transform: scale(1.05);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 77, 64, 0.2);
     }
-
     .social-icons {
-      margin-top: 1rem;
+      margin-top: 1.5rem;
     }
-
     .social-icons a {
+      display: inline-block;
       margin-right: 1rem;
-      font-size: 1.8rem;
       color: #555;
-      transition: transform 0.3s, color 0.3s;
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
     }
-
     .social-icons a:hover {
       color: #297eff;
-      transform: scale(1.2);
+      transform: translateY(-3px);
     }
-
-    @media (max-width: 768px) {
-      .about-section {
-        padding-top: 90px;
-        text-align: center;
-      }
-
-      .about-container {
-        flex-direction: column;
-        gap: 2rem;
-      }
-
-      .about-content {
-        text-align: center;
-      }
-
-      .about-content h2 {
-        font-size: 2rem;
-      }
-
-      .about-img img {
-        width: 220px;
-        height: 220px;
-      }
-    }
-
-    .interests-section {
-      padding: 60px 5vw;
-      background: #f1f8f9;
-    }
-
-    .interests-section h2 {
-      font-size: 2.2rem;
-      color: #004d40;
+    
+    /* Research Section */
+    .research-list {
+      list-style-position: inside;
       margin-bottom: 1.5rem;
-      text-align: center;
+      padding-left: 1rem;
     }
-
-    .interests-section p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: #333;
-      max-width: 900px;
-      margin: auto;
+    .research-list li {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+    .research-list .title {
+      font-weight: 600;
+      color: #004d40;
+    }
+    .research-list .journal {
+      font-style: italic;
+      color: #555;
+    }
+    
+    /* Gallery Section */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    .gallery-item {
+      border-radius: 8px;
+      overflow: hidden;
+      height: 200px;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+    
+    /* Teaching Section */
+    .teaching-list {
+      list-style-position: inside;
+      margin-bottom: 1.5rem;
+    }
+    .teaching-list li {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+    
+    /* Talks Section */
+    .talks-list {
+      list-style-position: inside;
+      margin-bottom: 1.5rem;
+    }
+    .talks-list li {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+    
+    /* Interests Section */
+    .interests-list {
+      list-style-position: inside;
+      margin-bottom: 1.5rem;
+    }
+    .interests-list li {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .sidebar {
+        width: 240px;
+      }
+      .main-content {
+        margin-left: 240px;
+      }
+    }
+    @media (max-width: 768px) {
+      .layout {
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 1.5rem;
+      }
+      .main-content {
+        margin-left: 0;
+      }
+      .nav-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+      }
+      .nav-links a {
+        flex-direction: row;
+        padding: 0.5rem;
+      }
+      .profile-img {
+        width: 100px;
+        height: 100px;
+      }
+      .name {
+        font-size: 1.2rem;
+      }
+      .title {
+        font-size: 0.8rem;
+      }
+      .contact-info {
+        border-top: none;
+        padding-top: 0;
+        margin-top: 1rem;
+      }
+    }
+    @media (max-width: 480px) {
+      .about-content {
+        flex-direction: column;
+      }
+      .about-img, .about-text {
+        min-width: 100%;
+      }
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideInRight {
+      from { transform: translateX(50px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    .animate-fade {
+      animation: fadeIn 0.8s ease-in-out;
+    }
+    .animate-slide {
+      animation: slideInRight 0.8s ease-in-out;
     }
   </style>
 </head>
-
 <body>
-  <nav>
-    <div class="logo">Rishikesh Parma</div>
-    <div class="hamburger" id="hamburger">&#9776;</div>
-    <div class="nav-links" id="navLinks">
-      <a href="#about">About</a>
-      <a href="#research">Research</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#teaching">Teaching</a>
-      <a href="#talks">Talks</a>
-      <a href="#interests">Interests</a>
-    </div>
-  </nav>
-
-  <!-- About Section -->
-  <section id="about" class="about-section">
-    <div class="about-container">
-      <div class="about-img">
-        <img src="main.jpg" alt="Rishikesh Parma">
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <img src="main.jpg" alt="Rishikesh Parma" class="profile-img">
+        <h2 class="name">Rishikesh Parma</h2>
+        <p class="title">PhD Candidate in Operations Management</p>
       </div>
-      <div class="about-content">
-        <h2>About Me</h2>
-       <p>
-  I am a PhD candidate in <strong>Operations Management</strong> at the <strong>University of Luxembourg</strong>,
-  expecting to defend my dissertation in <strong>September 2025</strong>. My doctoral research, supervised by
-  <strong>Prof. Çağıl Koçyiğit</strong> and <strong>Prof. Benny Mantin</strong>, focuses on
-  <strong>optimization under uncertainty</strong>. Specifically, I address <strong>resource allocation challenges
-  in supply chain problems</strong> by designing simple and practical algorithms. My work integrates
-  <strong>optimization techniques</strong> with <strong>machine learning methods</strong> to develop solutions
-  that are not only efficient but also suitable for real-world implementation.
-</p>
-
-<p>
-  I hold an <strong>Integrated Master’s degree in Mathematics and Computing</strong> from the
-  <strong>Indian Institute of Technology (IIT) Dhanbad</strong>, awarded in <strong>2019</strong>. During my studies,
-  I was a <strong>visiting research intern</strong> at the <strong>University of Salford</strong>, where I worked under
-  the mentorship of <strong>Prof. Phil Scarf</strong>.
-</p>
-
-        <div class="social-icons">
-          <a href="https://www.linkedin.com/in/rishikesh-parma-38188b102" target="_blank"><i
-              class="fab fa-linkedin"></i></a>
+      
+      <nav class="nav-links">
+        <a href="#about" class="active"><i class="fas fa-user"></i> About</a>
+        <a href="#research"><i class="fas fa-flask"></i> Research</a>
+        <a href="#gallery"><i class="fas fa-images"></i> Gallery</a>
+        <a href="#teaching"><i class="fas fa-chalkboard-teacher"></i> Teaching</a>
+        <a href="#talks"><i class="fas fa-microphone"></i> Conferences</a>
+      </nav>
+      
+      <div class="contact-info">
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <span>rishikesh.parma9@gmail.com</span>
         </div>
-        <a class="cv-btn" href="https://drive.google.com/file/d/1Ka36m7-LEq67_4V53WsMG4CNITNoaoF2/view?usp=sharing"
-          target="_blank">Download CV</a>
+        
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>University of Luxembourg</span>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Hamburger Menu Script -->
+    </aside>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+      <header>
+        <div class="header-content">
+          <h1>Welcome to My Academic Portfolio</h1>
+          <p>PhD Candidate in Operations Management at the University of Luxembourg</p>
+        </div>
+      </header>
+      
+      <!-- About Section -->
+      <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+          <div class="about-img">
+            <img src="1.jpg" alt="Rishikesh Parma Academic Photo">
+          </div>
+          <div class="about-text">
+            <h2>About Me</h2>
+            <p>
+              I am a PhD candidate in Operations Management at the University of Luxembourg, and I expect to defend my dissertation in September 2025. My doctoral research, conducted under the supervision of Prof. Çağıl Koçyiğit and Prof. Benny Mantin, focuses on optimization under uncertainty. Specifically, I address resource allocation challenges in supply chain problems by designing simple, practical algorithms. My work combines optimization methods with machine learning techniques to develop solutions that are both efficient and implementable in real-world settings.
+            </p>
+            <p>
+              I hold an Integrated Master's degree in Mathematics and Computing from the Indian Institute of Technology (IIT) Dhanbad, awarded in 2019. During my studies, I was a visiting research intern at the University of Salford, where I worked under the guidance of Prof. Phil Scarf.
+            </p>
+            <div class="social-icons">
+              <a href="https://www.linkedin.com/in/rishikesh-parma-38188b102" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <a href="https://drive.google.com/file/d/1Ka36m7-LEq67_4V53WsMG4CNITNoaoF2/view?usp=sharing" target="_blank" class="btn">Download CV</a>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Research Section -->
+      <section id="research" class="animate-fade">
+        <h2 class="section-title">Research & Publications</h2>
+        <div>
+          <h3>Working paper and under revision</h3>
+          <ul class="research-list">
+            <li>
+              Parma, R., Koçyiğit, Ç. and Mantin, B., 2025. Capacity Allocation: Balancing Contract Commitments and Spot Market Opportunities,(Working paper, targeted for submission to Production and Operations Management).
+            </li>
+            <li>
+              Parma, R., Koçyiğit, Ç. and Mantin, B., 2024. Simple and Effective: A Deterministic Auction with Support Information.  (Major Revision, Mathematics of Operations Research )
+            </li>
+          </ul>
+          
+          <h3>Journal Publications</h3>
+          <ul class="research-list">
+            <li>
+              Baker, R., Chadwick, S., Parma, R. and Scarf, P., 2022. The binomial-match, outcome uncertainty, and the case of netball. Journal of the Operational Research Society, 73(8), pp.1856-1872.
+            </li>
+            <li>
+              Scarf, P., Parma, R. and McHale, I., 2019. On outcome uncertainty and scoring rates in sport: The case of international rugby union. European Journal of Operational Research, 273(2), pp.721-730.
+            </li>
+          </ul>
+        </div>
+      </section>
+      
+      <!-- Gallery Section -->
+      <section id="gallery" class="animate-fade">
+        <h2 class="section-title">Gallery</h2>
+        <div class="gallery">
+          <div class="gallery-item">
+            <img src="1.jpg" alt="Academic Conference 1">
+          </div>
+          <div class="gallery-item">
+            <img src="12.jpg" alt="Academic Conference 2">
+          </div>
+          <div class="gallery-item">
+            <img src="3.jpg" alt="Research Presentation">
+          </div>
+          <div class="gallery-item">
+            <img src="2.jpg" alt="Campus Life">
+          </div>
+        </div>
+      </section>
+      
+      <!-- Teaching Section -->
+      <section id="teaching" class="animate-fade">
+        <h2 class="section-title">Teaching & Projects</h2>
+        <div class="teaching-content">
+          <p>
+            I've contributed to academia as a co-lecturer and teaching assistant in several university-level courses:
+          </p>
+          <ul class="teaching-list">
+            <li><strong>Co-Lecturer</strong>: Linear Algebra (2nd Year, Bachelor in Economics, 2025) — 60 students</li>
+            <li><strong>Co-Lecturer</strong>: Supply Chain Management (3rd Year, Bachelor in Economics, 2025) — 20 students</li>
+            <li><strong>Teaching Assistant</strong>: Linear Algebra (2nd Year, Bachelor in Economics, 2022–2023) — 60 students per year</li>
+            <li><strong>Teaching Assistant</strong>: Inventory Management (Master's in Logistics and Supply Chain Management, 2024) — 20 students</li>
+            <li><strong>Master's Thesis Co-Supervisor</strong>: Freight Demand Forecasting for Short Sea Liners — 3 students</li>
+          </ul>
+        </div>
+      </section>
+      
+      <!-- Talks Section -->
+      <section id="talks" class="animate-fade">
+        <h2 class="section-title">Talks & Conferences</h2>
+        <h3>Conference Presentations</h3>
+        <ul class="talks-list">
+          <li>INFORMS Annual Meeting — Indianapolis, USA 2022</li>
+          <li>INFORMS Revenue Management and Pricing Conference — London, UK 2023</li>
+          <li>TA Pai Management Institute, Manipal, India 2024</li>
+          <li>OR Conference — TU Munich, Germany 2024</li>
+          <li>Indian Institute of Management, Lucknow , India 2025</li>
+          <li>Indian Institute of Management, Udaipur, India 2025</li>
+        </ul>
+        <h3>Poster Presentations</h3>
+        <ul class="talks-list">
+          <li>○ Workshop on Algorithms, Approximation, and Learning in Market and Mechanism Design<br>— UC Berkeley, USA 2023</li>
+          <li>○ INFORMS MSOM Conference — London Business School, UK 2025</li>
+        </ul>
+      </section>
+      
+      <!-- Interests Section -->
+      <section id="interests" class="animate-fade">
+        <h2 class="section-title">Interests & Hobbies</h2>
+        <div class="interests-content">
+          <p>
+            Beyond research and academic commitments, I actively engage in a wide range of personal pursuits that reflect my passion for discipline, leadership, and well-being. These interests not only recharge my mind but also enrich my perspective on teamwork, perseverance, and mental clarity.
+          </p>
+          <ul class="interests-list">
+            <li><strong>Yoga & Fitness</strong>: Recognized as Best Performer in zonal yoga tournaments (2010); I continue to practice yoga and meditation regularly to cultivate mindfulness and physical endurance.</li>
+            <li><strong>Cricket Leadership</strong>: Former Captain of the University of Luxembourg's Cricket Club (2022–2023); awarded the Best Bowler Medal (2023–2024) for consistent all-round performance and mentorship on the field.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </div>
+  
   <script>
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('navLinks');
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
+    // Navigation active state
+    const navLinks = document.querySelectorAll('.nav-links a');
+    
+    // Set active link based on scroll position
+    window.addEventListener('scroll', () => {
+      let current = '';
+      const sections = document.querySelectorAll('section');
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+          current = section.getAttribute('id');
+        }
+      });
+      
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').substring(1) === current) {
+          link.classList.add('active');
+        }
+      });
+    });
+    
+    // Smooth scrolling for navigation links
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        
+        window.scrollTo({
+          top: targetSection.offsetTop - 20,
+          behavior: 'smooth'
+        });
+        
+        // Close mobile menu if open
+        navLinksContainer.classList.remove('active');
+      });
     });
   </script>
-
 </body>
-
 </html>
-
-<section id="research" class="animated-section research-section">
-  <style>
-    /* Section Layout */
-    .research-section {
-      background: #f9f9f9;
-      padding: 60px 20px;
-      border-top: 2px solid #ddd;
-      border-bottom: 2px solid #ddd;
-      font-family: Arial, sans-serif;
-    }
-
-    .research-container {
-      max-width: 960px;
-      margin: 0 auto;
-    }
-
-    /* Section Title */
-    .section-heading {
-      font-size: 2rem;
-      font-weight: 600;
-      margin-bottom: 30px;
-      color: #222;
-      text-align: center;
-    }
-
-    /* Content Area */
-    .section-content {
-      animation: fadeInUp 0.8s ease-in-out;
-    }
-
-    .desc h3 {
-      font-size: 1.5rem;
-      margin-top: 32px;
-      margin-bottom: 16px;
-      color: #333;
-      border-bottom: 2px solid #e0e0e0;
-      padding-bottom: 6px;
-    }
-
-    .desc ul {
-      list-style: disc;
-      padding-left: 20px;
-      margin-bottom: 30px;
-    }
-
-    .desc li {
-      margin-bottom: 20px;
-    }
-
-    .desc p {
-      margin: 0;
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #444;
-    }
-
-    /* Animation */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .section-heading {
-        font-size: 1.6rem;
-      }
-
-      .desc h3 {
-        font-size: 1.25rem;
-      }
-
-      .desc p {
-        font-size: 0.95rem;
-      }
-
-      .desc ul {
-        padding-left: 16px;
-      }
-    }
-  </style>
-
-  <div class="container research-container">
-    <h2 class="section-heading">Research & Publications</h2>
-
-    <div class="section-content fade-in-up">
-      <div class="desc">
-        <h3>Working Papers and Under Revision</h3>
-        <ul>
-          <li>
-            <p>
-              Parma, R., Koçyiğit, Ç., and Mantin, B. (2025).<br>
-              <em>Capacity Allocation: Balancing Contract Commitments and Spot Market Opportunities</em>.<br>
-              Working paper, targeted for submission to <em>Production and Operations Management</em>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Parma, R., Koçyiğit, Ç., and Mantin, B. (2024).<br>
-              <em>Simple and Effective: A Deterministic Auction with Support Information</em>.<br>
-              Major revision, <em>Mathematics of Operations Research</em>.
-            </p>
-          </li>
-        </ul>
-
-        <h3>Journal Publications</h3>
-        <ul>
-          <li>
-            <p>
-              Baker, R., Chadwick, S., Parma, R., and Scarf, P. (2022).<br>
-              <em>The binomial-match, outcome uncertainty, and the case of netball</em>.<br>
-              <em>Journal of the Operational Research Society</em>, 73(8), pp. 1856–1872.
-            </p>
-          </li>
-          <li>
-            <p>
-              Scarf, P., Parma, R., and McHale, I. (2019).<br>
-              <em>On outcome uncertainty and scoring rates in sport: The case of international rugby union</em>.<br>
-              <em>European Journal of Operational Research</em>, 273(2), pp. 721–730.
-            </p>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section id="gallery" class="animated-section">
-  <div class="container">
-    <h2 class="section-heading">Gallery</h2>
-    <div class="carousel" id="carousel">
-      <button class="carousel-btn prev" aria-label="Previous">&larr;</button>
-      <div class="carousel-track">
-        <img src="1.jpg" alt="Gallery Image 1" class="carousel-image">
-        <img src="2.jpg" alt="Gallery Image 2" class="carousel-image">
-        <img src="3.jpg" alt="Gallery Image 3" class="carousel-image">
-      </div>
-      <button class="carousel-btn next" aria-label="Next">&rarr;</button>
-      <div class="carousel-dots" id="dots"></div>
-    </div>
-  </div>
-</section>
-
-<style>
-  .carousel {
-    position: relative;
-    overflow: hidden;
-    max-width: 600px;
-    margin: 2rem auto;
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  }
-
-  .carousel-track {
-    display: flex;
-    transition: transform 0.5s ease;
-  }
-
-  .carousel-image {
-    width: 100%;
-    max-height: 320px;
-    object-fit: cover;
-    border-radius: 20px;
-    margin: 0 10px;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-  }
-
-  .carousel-image:hover {
-    transform: scale(1.03);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-  }
-
-  .carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #004d40;
-    color: white;
-    border: none;
-    padding: 10px 14px;
-    cursor: pointer;
-    z-index: 2;
-    font-size: 1.4rem;
-    border-radius: 50%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s ease;
-  }
-
-  .carousel-btn:hover {
-    background: #00796b;
-  }
-
-  .prev {
-    left: 10px;
-  }
-
-  .next {
-    right: 10px;
-  }
-
-  .carousel-dots {
-    text-align: center;
-    margin-top: 12px;
-  }
-
-  .carousel-dot {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    background: #bbb;
-    border-radius: 50%;
-    margin: 0 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-
-  .carousel-dot.active {
-    background: #4dd0e1;
-  }
-</style>
-
-<script>
-  const track = document.querySelector('.carousel-track');
-  const slides = Array.from(track.children);
-  const dotsNav = document.getElementById('dots');
-  let currentIndex = 0;
-
-  slides.forEach((_, i) => {
-    const dot = document.createElement('span');
-    dot.classList.add('carousel-dot');
-    if (i === 0) dot.classList.add('active');
-    dotsNav.appendChild(dot);
-    dot.addEventListener('click', () => goToSlide(i));
-  });
-
-  document.querySelector('.next').addEventListener('click', () => goToSlide(currentIndex + 1));
-  document.querySelector('.prev').addEventListener('click', () => goToSlide(currentIndex - 1));
-
-  function goToSlide(idx) {
-    currentIndex = (idx + slides.length) % slides.length;
-    const slideWidth = slides[0].getBoundingClientRect().width;
-    track.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
-    updateDots();
-  }
-
-  function updateDots() {
-    Array.from(dotsNav.children).forEach((dot, idx) => {
-      dot.classList.toggle('active', idx === currentIndex);
-    });
-  }
-
-  // Auto Slide
-  let autoplay = setInterval(() => goToSlide(currentIndex + 1), 5000);
-  const carouselEl = document.getElementById('carousel');
-  carouselEl.addEventListener('mouseenter', () => clearInterval(autoplay));
-  carouselEl.addEventListener('mouseleave', () => autoplay = setInterval(() => goToSlide(currentIndex + 1), 5000));
-</script>
-
-<style>
-  .animated-section {
-    background: linear-gradient(to right, #f0fafa, #ffffff);
-    padding: 100px 5vw 60px;
-    animation: fadeIn 1s ease-in-out;
-  }
-
-  .section-heading {
-    font-size: 2.5rem;
-    color: #004d40;
-    text-align: center;
-    margin-bottom: 2rem;
-    animation: slideInDown 1s ease forwards;
-  }
-
-  .fade-in-up {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeUp 1s ease forwards;
-    animation-delay: 0.4s;
-  }
-
-  @keyframes fadeUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes slideInDown {
-    from {
-      transform: translateY(-50px);
-      opacity: 0;
-    }
-
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-
-  .research-container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-  }
-
-  .section-heading {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: #222;
-  }
-
-  .desc {
-    text-align: left;
-    font-size: 1.05rem;
-    line-height: 1.8;
-    color: #444;
-    margin-bottom: 1.5rem;
-  }
-
-  .research-list {
-    padding-left: 1.5rem;
-    list-style-type: disc;
-    margin-bottom: 1.5rem;
-  }
-
-  .research-list li {
-    margin-bottom: 1.2rem;
-    font-size: 1rem;
-    color: #333;
-  }
-
-  .research-list span {
-    display: block;
-    margin-top: 0.2rem;
-    font-style: italic;
-    color: #555;
-  }
-
-  /* Responsive Tweaks */
-  @media (max-width: 768px) {
-    .research-container {
-      padding: 1rem 1rem;
-    }
-
-    .section-heading {
-      font-size: 1.5rem;
-    }
-
-    .desc,
-    .research-list li {
-      font-size: 0.95rem;
-    }
-  }
-</style>
-
-<section id="teaching" class="animated-section teaching-section">
-  <div class="container teaching-container">
-    <h2 class="section-heading">Teaching & Projects</h2>
-    <div class="section-content fade-in-up">
-      <div class="desc">
-<div class="desc">
- <div class="desc">
-  <p>
-    I’ve contributed to academia as a co-lecturer and teaching assistant in several university-level courses:
-  </p>
-
-  <h3>Co-Lecturer</h3>
-  <ul>
-    <li><strong>Linear Algebra</strong> (2nd Year, Bachelor in Economics, 2025) — 60 students</li>
-    <li><strong>Supply Chain Management</strong> (3rd Year, Bachelor in Economics, 2025) — 20 students</li>
-  </ul>
-
-  <h3>Teaching Assistant</h3>
-  <ul>
-    <li><strong>Linear Algebra</strong> (2nd Year, Bachelor in Economics, 2022–2023) — 60 students per year</li>
-    <li><strong>Inventory Management</strong> (Master’s in Logistics and Supply Chain Management, 2024) — 20 students</li>
-  </ul>
-
-  <h3>Master’s Thesis Co-Supervisor</h3>
-  <ul>
-    <li><strong>Freight Demand Forecasting for Short Sea Liners</strong> — 3 students</li>
-  </ul>
-</div>
-
-    </div>
-  </div>
-</section>
-<style>
-  .desc {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  padding: 16px;
-  max-width: 100%;
-  box-sizing: border-box;
-  color: #333;
-}
-
-.desc p {
-  margin-bottom: 20px;
-  font-size: 1rem;
-}
-
-.desc h3 {
-  margin-top: 24px;
-  margin-bottom: 12px;
-  font-size: 1.25rem;
-  color: #222;
-}
-
-.desc ul {
-  list-style-type: disc;
-  padding-left: 20px;
-  margin-bottom: 20px;
-}
-
-.desc li {
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
-
-@media (max-width: 600px) {
-  .desc {
-    padding: 12px;
-    font-size: 0.95rem;
-  }
-
-  .desc h3 {
-    font-size: 1.1rem;
-  }
-
-  .desc li {
-    font-size: 0.95rem;
-    margin-bottom: 8px;
-  }
-}
-
-  .teaching-container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-  }
-
-  .section-heading {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: #222;
-  }
-
-  .desc {
-    text-align: left;
-    font-size: 1.05rem;
-    line-height: 1.8;
-    color: #444;
-    margin-bottom: 1.5rem;
-  }
-
-  .research-list {
-    padding-left: 1.5rem;
-    list-style-type: disc;
-    margin-bottom: 1.5rem;
-  }
-
-  .research-list li {
-    margin-bottom: 1rem;
-    font-size: 1rem;
-    color: #333;
-  }
-
-  @media (max-width: 768px) {
-    .teaching-container {
-      padding: 1.2rem 1rem;
-    }
-
-    .section-heading {
-      font-size: 1.6rem;
-    }
-
-    .desc,
-    .research-list li {
-      font-size: 0.95rem;
-    }
-  }
-</style>
-<style>
-  .animated-section {
-    background: linear-gradient(to right, #f0fafa, #ffffff);
-    padding: 100px 5vw 60px;
-    animation: fadeIn 1s ease-in-out;
-  }
-
-  .section-heading {
-    font-size: 2.5rem;
-    color: #004d40;
-    text-align: center;
-    margin-bottom: 2rem;
-    animation: slideInDown 1s ease forwards;
-  }
-
-  .fade-in-up {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeUp 1s ease forwards;
-    animation-delay: 0.4s;
-  }
-
-  @keyframes fadeUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes slideInDown {
-    from {
-      transform: translateY(-50px);
-      opacity: 0;
-    }
-
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-
-  .research-list {
-    margin-top: 1rem;
-    padding-left: 1.2rem;
-    list-style-type: disc;
-    color: #333;
-    line-height: 1.8;
-  }
-
-  .desc {
-    max-width: 800px;
-    font-size: 1.05rem;
-    color: #333;
-    margin: 0 auto;
-    line-height: 1.7;
-    text-align: justify;
-  }
-</style>
-<section id="talks" class="animated-section">
-  <div class="container">
-    <h2 class="section-heading">Talks & Conferences</h2>
-
-    <div class="fade-in-up">
-  <div class="desc">
-  <h3>Conference Presentations</h3>
-  <ul>
-    <li><strong>INFORMS Annual Meeting</strong> – Indianapolis, USA (2022)</li>
-    <li><strong>INFORMS Revenue Management and Pricing Conference</strong> – London, UK (2023)</li>
-    <li><strong>TA Pai Management Institute</strong> – Manipal, India (2024)</li>
-    <li><strong>OR Conference</strong> – TU Munich, Germany (2024)</li>
-    <li><strong>Indian Institute of Management</strong> – Lucknow, India (2025)</li>
-    <li><strong>Indian Institute of Management</strong> – Udaipur, India (2025)</li>
-  </ul>
-
-  <h3>Poster Presentations</h3>
-  <ul>
-    <li><strong>Workshop on Algorithms, Approximation, and Learning in Market and Mechanism Design</strong> – UC Berkeley, USA (2023)</li>
-    <li><strong>INFORMS MSOM Conference</strong> – London Business School, UK (2025)</li>
-  </ul>
-</div>
-
-</div>
-
-  </div>
-</section>
-
-<style>
-  .desc {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  padding: 16px;
-  max-width: 100%;
-  box-sizing: border-box;
-  color: #333;
-}
-
-.desc h3 {
-  margin-top: 24px;
-  margin-bottom: 12px;
-  font-size: 1.25rem;
-  color: #222;
-}
-
-.desc ul {
-  list-style-type: disc;
-  padding-left: 20px;
-  margin-bottom: 24px;
-}
-
-.desc li {
-  margin-bottom: 12px;
-  font-size: 1rem;
-}
-
-@media (max-width: 600px) {
-  .desc {
-    padding: 12px;
-    font-size: 0.95rem;
-  }
-
-  .desc h3 {
-    font-size: 1.1rem;
-  }
-
-  .desc li {
-    font-size: 0.95rem;
-    margin-bottom: 10px;
-  }
-}
-
-  .animated-section {
-    background: linear-gradient(to right, #f0fafa, #ffffff);
-    padding: 100px 5vw 60px;
-    animation: fadeIn 1s ease-in-out;
-  }
-
-  .container {
-    max-width: 960px;
-    margin: 0 auto;
-  }
-
-  .section-heading {
-    font-size: 2.5rem;
-    color: #004d40;
-    text-align: center;
-    margin-bottom: 2rem;
-    animation: slideInDown 1s ease forwards;
-  }
-
-  .fade-in-up {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeUp 1s ease forwards;
-    animation-delay: 0.4s;
-  }
-
-  @keyframes fadeUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes slideInDown {
-    from {
-      transform: translateY(-50px);
-      opacity: 0;
-    }
-
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-
-  .desc {
-    max-width: 800px;
-    font-size: 1.05rem;
-    color: #333;
-    margin-bottom: 1.5rem;
-    line-height: 1.7;
-    text-align: justify;
-  }
-
-  .research-list {
-    margin-top: 0.5rem;
-    padding-left: 1.2rem;
-    list-style-type: disc;
-    color: #333;
-    line-height: 1.8;
-    margin-bottom: 2rem;
-  }
-</style>
-
-
-<section id="interests" class="animated-section">
-  <div class="container">
-    <h2 class="section-heading">Interests & Hobbies</h2>
-
-    <div class="fade-in-up">
-      <div class="desc">
-        <p>
-          Beyond research and academic commitments, I actively engage in a wide range of personal pursuits that reflect my
-          passion for discipline, leadership, and well-being. These interests not only recharge my mind but also enrich my
-          perspective on teamwork, perseverance, and mental clarity.
-        </p>
-        <ul>
-          <li><strong>Yoga & Fitness:</strong> Recognized as Best Performer in zonal yoga tournaments (2010); I continue
-            to practice yoga and meditation regularly to cultivate mindfulness and physical endurance.</li>
-          <li><strong>Cricket Leadership:</strong> Former Captain of the University of Luxembourg’s Cricket Club
-            (2022–2023); awarded the Best Bowler Medal (2023–2024) for consistent all-round performance and mentorship on
-            the field.</li>
-          <li><strong>Running Enthusiast:</strong> Participated in half-marathons and team relay races across Luxembourg;
-            I enjoy the meditative rhythm of long-distance running and the spirit of community in competitive events.</li>
-          <li><strong>Music & Travel:</strong> Avid lover of instrumental music and global travel—exploring new cultures,
-            cuisines, and historical landmarks fuels my creativity and curiosity.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-<style>
-  /* Shared Section Animation and Layout */
-  .animated-section {
-    background: linear-gradient(to right, #f0fafa, #ffffff);
-    padding: 100px 5vw 60px;
-    animation: fadeIn 1s ease-in-out;
-  }
-
-  .container {
-    max-width: 960px;
-    margin: 0 auto;
-  }
-
-  .section-heading {
-    font-size: 2.5rem;
-    color: #004d40;
-    text-align: center;
-    margin-bottom: 2rem;
-    animation: slideInDown 1s ease forwards;
-  }
-
-  .fade-in-up {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeUp 1s ease forwards;
-    animation-delay: 0.4s;
-  }
-
-  @keyframes fadeUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes slideInDown {
-    from {
-      transform: translateY(-50px);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-
-  /* Interests Section Specific */
-  #interests .desc {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1.05rem;
-    color: #333;
-    line-height: 1.7;
-    text-align: justify;
-    padding: 16px;
-    box-sizing: border-box;
-    max-width: 800px;
-    margin-bottom: 1.5rem;
-  }
-
-  #interests .desc p {
-    margin-bottom: 1.2rem;
-  }
-
-  #interests .desc ul {
-    list-style-type: disc;
-    padding-left: 20px;
-    margin-bottom: 24px;
-  }
-
-  #interests .desc li {
-    margin-bottom: 12px;
-    font-size: 1rem;
-  }
-
-  #interests .desc strong {
-    color: #000;
-  }
-
-  /* Responsive Tweaks */
-  @media (max-width: 600px) {
-    #interests .desc {
-      padding: 12px;
-      font-size: 0.95rem;
-    }
-
-    #interests .desc li {
-      font-size: 0.95rem;
-      margin-bottom: 10px;
-    }
-
-    .section-heading {
-      font-size: 2rem;
-    }
-  }
-</style>
-
